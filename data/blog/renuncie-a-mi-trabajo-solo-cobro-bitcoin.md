@@ -1,8 +1,11 @@
 ---
-title: "Renuncié a mi trabajo. Ahora solo cobro en Bitcoin."
-date: 2014-02-06T05:35:07-03:00
-cover: "/assets/posts/renuncie-a-mi-trabajo-ahora-solo-cobro-en-bitcoin/cover.jpg"
-coverCaption: "Image Credit to [Dmitry Demidko](https://unsplash.com/@wildbook) on [Unsplash](https://unsplash.com/photos/z4VuRg-ZOEg)"
+title: 'Renuncié a mi trabajo. Ahora solo cobro en Bitcoin.'
+date: '2014-02-06'
+tags: ['bitcoin', 'crypto', 'open-source', 'javascript']
+draft: false
+layout: PostBanner
+images: ['/static/images/posts/renuncie-a-mi-trabajo-ahora-solo-cobro-en-bitcoin/cover.jpg']
+summary: Pasando de un sueldo a la criptomoneda
 ---
 
 El [Bitcoin (BTC)](https://bitcoin.org/es/) es sin dudas el tema del momento, el actor principal para nosotros los techies y sobre todo para los Argentinos.
