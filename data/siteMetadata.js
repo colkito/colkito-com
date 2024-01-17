@@ -2,19 +2,19 @@
 const siteMetadata = {
   title: 'colkito.com',
   author: 'colkito',
-  headerTitle: 'TailwindBlog',
-  description: 'A blog created with Next.js and Tailwind.css',
+  headerTitle: 'colkito',
+  description: '🧩 Decentralize all the thinks.',
   language: 'en-us',
   theme: 'system', // system, dark or light
   siteUrl: 'https://colkito.com',
-  siteRepo: 'https://github.com/colkito/colkito-com',
+  siteRepo: 'https://github.com/colkito/colkito-web',
   siteLogo: '/static/images/logo.png',
   socialBanner: '/static/images/twitter-card.png',
   mastodon: 'https://mastodon.social/@colkito',
-  email: 'address@yoursite.com',
+  email: 'hello@colkito.com',
   github: 'https://github.com/colkito',
   twitter: 'https://twitter.com/colkitoxyz',
-  // linkedin: 'https://www.linkedin.com',
+  linkedin: 'https://ar.linkedin.com/in/colkito',
   locale: 'en-US',
   analytics: {
     // If you want to use an analytics provider you have to add it to the
