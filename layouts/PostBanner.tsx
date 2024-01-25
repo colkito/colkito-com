@@ -9,6 +9,7 @@ import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import PageSubtitle from '@/components/PageSubtitle'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -18,7 +19,7 @@ interface LayoutProps {
 }
 
 export default function PostMinimal({ content, next, prev, children }: LayoutProps) {
-  const { slug, title, images } = content
+  const { slug, title, summary, images } = content
   const displayImage =
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
@@ -31,12 +32,18 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
             <div className="w-full">
               <Bleed>
                 <div className="relative aspect-[2/1] w-full">
-                  <Image src={displayImage} alt={title} fill className="object-cover" />
+                  <Image
+                    src={displayImage}
+                    alt={title}
+                    fill
+                    className="rounded-lg object-cover shadow-2xl"
+                  />
                 </div>
               </Bleed>
             </div>
             <div className="relative pt-10">
               <PageTitle>{title}</PageTitle>
+              <PageSubtitle>{summary}</PageSubtitle>
             </div>
           </div>
           <div className="prose max-w-none py-4 dark:prose-invert">{children}</div>
