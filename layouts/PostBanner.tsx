@@ -30,7 +30,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
       <ScrollTopAndComment />
       <article>
         <div>
-          <div className="space-y-1 pb-10 dark:border-gray-700">
+          <div className="space-y-1 pb-8 dark:border-gray-700">
             <div className="w-full">
               <Bleed>
                 <div className="relative aspect-[2/1] w-full">
@@ -46,16 +46,17 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
             <div className="relative pt-10">
               <PageTitle>{title}</PageTitle>
               <PageSubtitle>{summary}</PageSubtitle>
-              <div className="mt-4 flex flex-row text-gray-500 dark:text-gray-400">
-                <PageDate date={date} locale={siteMetadata.locale} />
-                <div className="ml-2 mr-2">{` • `}</div>
+              <div className="mt-8 flex flex-row text-gray-500 dark:text-gray-400">
+                <PageDate locale={siteMetadata.locale}>{date}</PageDate>
                 {aiContent && <PostAiContent />}
               </div>
             </div>
           </div>
-          <div className="prose max-w-none py-4 dark:prose-invert">{children}</div>
+          <div className="prose max-w-none py-4 text-lg dark:prose-invert lg:prose-xl prose-img:rounded-lg">
+            {children}
+          </div>
           {siteMetadata.comments && (
-            <div className="pb-6 pt-6 text-center text-gray-700 dark:text-gray-300" id="comment">
+            <div className="py-6 text-center text-gray-700 dark:text-gray-300" id="comment">
               <Comments slug={slug} />
             </div>
           )}
