@@ -11,14 +11,15 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
 
 export default function PageDate({ date, locale }: Props) {
   const currentDate = new Date(date)
+  const currentDateISOStr = currentDate.toISOString()
+
   return (
-    <div className="mt-4">
-      <time
-        dateTime={currentDate.toISOString()}
-        className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"
-      >
-        {currentDate.toLocaleDateString(locale, postDateTemplate)}
-      </time>
-    </div>
+    <time
+      className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"
+      dateTime={currentDateISOStr}
+      title={currentDateISOStr}
+    >
+      {currentDate.toLocaleDateString(locale, postDateTemplate)}
+    </time>
   )
 }

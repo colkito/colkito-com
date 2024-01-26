@@ -11,6 +11,7 @@ import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import PageSubtitle from '@/components/PageSubtitle'
 import PageDate from '@/components/PageDate'
+import PostAiContent from '@/components/PostAIContent'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -20,7 +21,7 @@ interface LayoutProps {
 }
 
 export default function PostMinimal({ content, next, prev, children }: LayoutProps) {
-  const { slug, title, summary, date, images } = content
+  const { slug, title, summary, date, images, aiContent } = content
   const displayImage =
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
@@ -45,7 +46,10 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
             <div className="relative pt-10">
               <PageTitle>{title}</PageTitle>
               <PageSubtitle>{summary}</PageSubtitle>
-              <PageDate date={date} locale={siteMetadata.locale} />
+              <div className="mt-4 flex flex-row">
+                <PageDate date={date} locale={siteMetadata.locale} />
+                {aiContent && <PostAiContent />}
+              </div>
             </div>
           </div>
           <div className="prose max-w-none py-4 dark:prose-invert">{children}</div>
