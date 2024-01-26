@@ -10,6 +10,7 @@ import SectionContainer from '@/components/SectionContainer'
 import siteMetadata from '@/data/siteMetadata'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 import PageSubtitle from '@/components/PageSubtitle'
+import PageDate from '@/components/PageDate'
 
 interface LayoutProps {
   content: CoreContent<Blog>
@@ -19,7 +20,7 @@ interface LayoutProps {
 }
 
 export default function PostMinimal({ content, next, prev, children }: LayoutProps) {
-  const { slug, title, summary, images } = content
+  const { slug, title, summary, date, images } = content
   const displayImage =
     images && images.length > 0 ? images[0] : 'https://picsum.photos/seed/picsum/800/400'
 
@@ -28,7 +29,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
       <ScrollTopAndComment />
       <article>
         <div>
-          <div className="space-y-1 pb-10 text-center dark:border-gray-700">
+          <div className="space-y-1 pb-10 dark:border-gray-700">
             <div className="w-full">
               <Bleed>
                 <div className="relative aspect-[2/1] w-full">
@@ -44,6 +45,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
             <div className="relative pt-10">
               <PageTitle>{title}</PageTitle>
               <PageSubtitle>{summary}</PageSubtitle>
+              <PageDate date={date} locale={siteMetadata.locale} />
             </div>
           </div>
           <div className="prose max-w-none py-4 dark:prose-invert">{children}</div>
@@ -55,7 +57,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           <footer>
             <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
               {prev && prev.path && (
-                <div className="pt-4 xl:pt-8">
+                <div className="pr-4 pt-4 xl:pt-8">
                   <Link
                     href={`/${prev.path}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -66,7 +68,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
                 </div>
               )}
               {next && next.path && (
-                <div className="pt-4 xl:pt-8">
+                <div className="pl-4 pt-4 text-right xl:pt-8">
                   <Link
                     href={`/${next.path}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
