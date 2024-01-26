@@ -47,7 +47,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
               <PageTitle>{title}</PageTitle>
               <PageSubtitle>{summary}</PageSubtitle>
               <div className="mt-8 flex flex-row text-gray-500 dark:text-gray-400">
-                <PageDate locale={siteMetadata.locale}>{date}</PageDate>
+                <PageDate>{date}</PageDate>
                 {aiContent && <PostAiContent />}
               </div>
             </div>

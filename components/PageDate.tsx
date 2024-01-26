@@ -1,8 +1,9 @@
 import { ReactNode } from 'react'
+import siteMetadata from '@/data/siteMetadata'
 
 interface Props {
   children: ReactNode
-  locale: Intl.LocalesArgument
+  locale?: Intl.LocalesArgument
 }
 
 const postDateTemplate: Intl.DateTimeFormatOptions = {
@@ -11,7 +12,7 @@ const postDateTemplate: Intl.DateTimeFormatOptions = {
   day: 'numeric',
 }
 
-export default function PageDate({ children, locale }: Props) {
+export default function PageDate({ children, locale = siteMetadata.locale }: Props) {
   const currentDate = new Date(children as string)
   const currentDateISOStr = currentDate.toISOString()
 
