@@ -62,8 +62,8 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           )}
           <footer>
             <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
-              {prev && prev.path && (
-                <div className="pr-4 pt-4 xl:pt-8">
+              <div className="pr-4 pt-4 xl:pt-8">
+                {prev && prev.path && (
                   <Link
                     href={`/${prev.path}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -71,10 +71,10 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
                   >
                     &larr; {prev.title}
                   </Link>
-                </div>
-              )}
-              {next && next.path && (
-                <div className="pl-4 pt-4 text-right xl:pt-8">
+                )}
+              </div>
+              <div className="pl-4 pt-4 text-right xl:pt-8">
+                {next && next.path && (
                   <Link
                     href={`/${next.path}`}
                     className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
@@ -82,8 +82,8 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
                   >
                     {next.title} &rarr;
                   </Link>
-                </div>
-              )}
+                )}
+              </div>
             </div>
           </footer>
         </div>
