@@ -1,10 +1,11 @@
-import { FaGithubAlt } from 'react-icons/fa'
+import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { SiMaildotru } from 'react-icons/si'
 
 const components = {
-  mail: SiMaildotru,
   github: FaGithubAlt,
+  linkedin: FaLinkedinIn,
+  mail: SiMaildotru,
   twitter: FaXTwitter,
 }
 
