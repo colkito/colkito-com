@@ -1,13 +1,11 @@
-import { Mail, Github, Facebook, Youtube, Linkedin, Twitter, Mastodon } from './icons'
+import { FaGithubAlt } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
+import { SiMaildotru } from 'react-icons/si'
 
 const components = {
-  mail: Mail,
-  github: Github,
-  facebook: Facebook,
-  youtube: Youtube,
-  linkedin: Linkedin,
-  twitter: Twitter,
-  mastodon: Mastodon,
+  mail: SiMaildotru,
+  github: FaGithubAlt,
+  twitter: FaXTwitter,
 }
 
 type SocialIconProps = {

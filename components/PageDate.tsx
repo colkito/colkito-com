@@ -15,7 +15,7 @@ export default function PageDate({ date, locale }: Props) {
 
   return (
     <time
-      className="text-base font-medium leading-6 text-gray-500 dark:text-gray-400"
+      className="text-base font-medium leading-6"
       dateTime={currentDateISOStr}
       title={currentDateISOStr}
     >
