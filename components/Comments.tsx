@@ -12,10 +12,8 @@ export default function Comments({ slug }: { slug: string }) {
 
   return (
     <div ref={ref}>
-      {inView && siteMetadata.comments ? (
+      {inView && siteMetadata.comments && (
         <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
-      ) : (
-        'no comments'
       )}
     </div>
   )

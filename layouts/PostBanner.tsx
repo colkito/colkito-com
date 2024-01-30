@@ -30,65 +30,63 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
     <SectionContainer>
       <ScrollTopAndComment />
       <article>
-        <div>
-          <div className="space-y-1 pb-8 dark:border-gray-700">
-            <div className="w-full">
-              <Bleed>
-                <div className="relative aspect-[2/1] w-full">
-                  <Image
-                    src={displayImage}
-                    alt={title}
-                    fill
-                    className="rounded-lg object-cover shadow-2xl"
-                  />
-                </div>
-              </Bleed>
-            </div>
-            <div className="relative pt-10">
-              <PageTitle>{title}</PageTitle>
-              <PageSubtitle>{summary}</PageSubtitle>
-              <div className="mt-8 flex flex-row text-gray-500 dark:text-gray-400">
-                <PageDate>{date}</PageDate>
-                {aiContent && <PostAiContent />}
+        <div className="space-y-1 pb-8 dark:border-gray-700">
+          <div className="w-full">
+            <Bleed>
+              <div className="relative aspect-[2/1] w-full">
+                <Image
+                  src={displayImage}
+                  alt={title}
+                  fill
+                  className="rounded-lg object-cover shadow-2xl"
+                />
               </div>
+            </Bleed>
+          </div>
+          <div className="relative pt-10">
+            <PageTitle>{title}</PageTitle>
+            <PageSubtitle>{summary}</PageSubtitle>
+            <div className="mt-8 flex flex-row text-gray-500 dark:text-gray-400">
+              <PageDate>{date}</PageDate>
+              {aiContent && <PostAiContent />}
             </div>
           </div>
-          <div className="prose max-w-none py-4 text-lg dark:prose-invert lg:prose-xl prose-img:rounded-lg">
-            {children}
-          </div>
-          {siteMetadata.comments && (
-            <div className="py-6 text-center text-gray-700 dark:text-gray-300" id="comment">
-              <Comments slug={slug} />
-            </div>
-          )}
-          <footer>
-            <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
-              <div className="pr-4 pt-4 xl:pt-8">
-                {prev && prev.path && (
-                  <Link
-                    href={`/${prev.path}`}
-                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    aria-label={`Previous post: ${prev.title}`}
-                  >
-                    &larr; {prev.title}
-                  </Link>
-                )}
-              </div>
-              <div className="pl-4 pt-4 text-right xl:pt-8">
-                {next && next.path && (
-                  <Link
-                    href={`/${next.path}`}
-                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-                    aria-label={`Next post: ${next.title}`}
-                  >
-                    {next.title} &rarr;
-                  </Link>
-                )}
-              </div>
-            </div>
-          </footer>
         </div>
+        <div className="prose max-w-none py-4 text-lg dark:prose-invert lg:prose-xl prose-img:rounded-lg">
+          {children}
+        </div>
+        {siteMetadata.comments && (
+          <div className="py-6 text-center text-gray-700 dark:text-gray-300" id="comment">
+            <Comments slug={slug} />
+          </div>
+        )}
       </article>
+      <footer className="border-t border-gray-200 dark:border-gray-700">
+        <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
+          <div className="pr-4 pt-4 xl:pt-8">
+            {prev && prev.path && (
+              <Link
+                href={`/${prev.path}`}
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                aria-label={`Previous post: ${prev.title}`}
+              >
+                &larr; {prev.title}
+              </Link>
+            )}
+          </div>
+          <div className="pl-4 pt-4 text-right xl:pt-8">
+            {next && next.path && (
+              <Link
+                href={`/${next.path}`}
+                className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                aria-label={`Next post: ${next.title}`}
+              >
+                {next.title} &rarr;
+              </Link>
+            )}
+          </div>
+        </div>
+      </footer>
     </SectionContainer>
   )
 }
