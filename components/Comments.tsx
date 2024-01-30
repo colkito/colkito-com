@@ -1,17 +1,22 @@
 'use client'
 
 import { Comments as CommentsComponent } from 'pliny/comments'
-import { useState } from 'react'
+import { useInView } from 'react-intersection-observer'
 import siteMetadata from '@/data/siteMetadata'
 
 export default function Comments({ slug }: { slug: string }) {
-  const [loadComments, setLoadComments] = useState(false)
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    rootMargin: '100px 0px',
+  })
+
   return (
-    <>
-      {!loadComments && <button onClick={() => setLoadComments(true)}>Load Comments</button>}
-      {siteMetadata.comments && loadComments && (
+    <div ref={ref}>
+      {inView && siteMetadata.comments ? (
         <CommentsComponent commentsConfig={siteMetadata.comments} slug={slug} />
+      ) : (
+        'no comments'
       )}
-    </>
+    </div>
   )
 }

@@ -65,7 +65,11 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
             <div className="flex flex-col text-sm font-medium sm:flex-row sm:justify-between sm:text-base">
               <div className="pr-4 pt-4 xl:pt-8">
                 {prev && prev.path && (
-                  <Link href={`/${prev.path}`} aria-label={`Previous post: ${prev.title}`}>
+                  <Link
+                    href={`/${prev.path}`}
+                    className="text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
+                    aria-label={`Previous post: ${prev.title}`}
+                  >
                     &larr; {prev.title}
                   </Link>
                 )}
