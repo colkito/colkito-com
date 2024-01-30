@@ -56,7 +56,7 @@ export default function PostMinimal({ content, next, prev, children }: LayoutPro
           {children}
         </div>
         {siteMetadata.comments && (
-          <div className="py-6 text-center text-gray-700 dark:text-gray-300" id="comment">
+          <div className="py-6 text-center text-slate-900 dark:text-white" id="comment">
             <Comments slug={slug} />
           </div>
         )}
