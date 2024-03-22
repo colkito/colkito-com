@@ -15,8 +15,8 @@ const Header = () => {
             <div className="mr-3 flex">
               <Image
                 alt="colkito"
-                src="/static/images/authors/default.jpg"
-                className="flex rounded-lg"
+                src="/static/images/authors/default.png"
+                className="flex rounded-full shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]"
                 width={30}
                 height={30}
               />
