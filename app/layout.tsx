@@ -87,8 +87,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${notoSans.className} scroll-smooth`}
       suppressHydrationWarning
     >
-      <meta name="msapplication-TileColor" content="#000000" />
-      <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <body className="bg-white text-slate-900  antialiased dark:bg-slate-800 dark:text-white">
         <ThemeProviders>
           <Analytics analyticsConfig={siteMetadata.analytics as AnalyticsConfig} />
