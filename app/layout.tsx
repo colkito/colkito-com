@@ -1,7 +1,7 @@
 import 'css/tailwind.css'
 import 'pliny/search/algolia.css'
 
-import { Metadata } from 'next'
+import { type Metadata, type Viewport } from 'next'
 import { Noto_Sans } from 'next/font/google'
 import { Analytics, AnalyticsConfig } from 'pliny/analytics'
 import { SearchProvider, SearchConfig } from 'pliny/search'
@@ -18,6 +18,18 @@ const notoSans = Noto_Sans({
   display: 'swap',
 })
 
+export const viewport: Viewport = {
+  minimumScale: 1,
+  initialScale: 1,
+  width: 'device-width',
+  userScalable: false,
+  viewportFit: 'cover',
+  themeColor: [
+    { media: '(prefers-color-scheme: dark)', color: '#1e293b' }, // INFO: tailwindcss color slate-800
+    { media: '(prefers-color-scheme: light)', color: '#ffffff' },
+  ],
+}
+
 export const metadata: Metadata = {
   metadataBase: new URL(siteMetadata.siteUrl),
   title: {
@@ -33,6 +45,15 @@ export const metadata: Metadata = {
     images: [siteMetadata.socialBanner],
     locale: 'en_US',
     type: 'website',
+  },
+  formatDetection: {
+    telephone: false,
+  },
+  appleWebApp: {
+    capable: true,
+    title: siteMetadata.title,
+    statusBarStyle: 'black-translucent',
+    // statusBarStyle: 'default',
   },
   alternates: {
     canonical: './',
@@ -55,6 +76,7 @@ export const metadata: Metadata = {
     title: siteMetadata.title,
     card: 'summary_large_image',
     images: [siteMetadata.socialBanner],
+    creator: '@colkitoxyz',
   },
 }
 
@@ -65,14 +87,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       className={`${notoSans.className} scroll-smooth`}
       suppressHydrationWarning
     >
-      <link rel="apple-touch-icon" sizes="76x76" href="/static/favicons/apple-touch-icon.png" />
-      <link rel="icon" type="image/png" sizes="32x32" href="/static/favicons/favicon-32x32.png" />
-      <link rel="icon" type="image/png" sizes="16x16" href="/static/favicons/favicon-16x16.png" />
-      <link rel="manifest" href="/static/favicons/site.webmanifest" />
-      <link rel="mask-icon" href="/static/favicons/safari-pinned-tab.svg" color="#5bbad5" />
       <meta name="msapplication-TileColor" content="#000000" />
-      <meta name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
-      <meta name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
       <link rel="alternate" type="application/rss+xml" href="/feed.xml" />
       <body className="bg-white text-slate-900  antialiased dark:bg-slate-800 dark:text-white">
         <ThemeProviders>

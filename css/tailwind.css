@@ -2,26 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-.task-list-item::before {
-  @apply hidden;
-}
-
-.task-list-item {
-  @apply list-none;
-}
-
-.footnotes {
-  @apply mt-12 border-t border-gray-200 pt-8 dark:border-gray-700;
-}
-
-.data-footnote-backref {
-  @apply no-underline;
-}
-
-.csl-entry {
-  @apply my-5;
-}
-
 /* https://stackoverflow.com/questions/61083813/how-to-avoid-internal-autofill-selected-style-to-be-applied */
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
@@ -30,6 +10,16 @@ input:-webkit-autofill:focus {
     color 600000s 0s;
 }
 
-.katex-display {
-  overflow: auto hidden;
+/* Neon */
+.text-neon {
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #0fa,
+    0 0 82px #0fa,
+    0 0 92px #0fa,
+    0 0 102px #0fa,
+    0 0 151px #0fa;
 }
