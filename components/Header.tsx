@@ -21,7 +21,7 @@ const Header = () => {
                 height={30}
               />
             </div>
-            <div className="flex h-6 items-center text-2xl font-semibold">
+            <div className="text-neon flex h-6 items-center text-2xl font-semibold">
               {siteMetadata.headerTitle}
             </div>
           </div>
