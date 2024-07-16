@@ -3,12 +3,12 @@ import headerNavLinks from '@/data/headerNavLinks'
 import Image from './Image'
 import Link from './Link'
 import MobileNav from './MobileNav'
-import SearchButton from './SearchButton'
 import ThemeSwitch from './ThemeSwitch'
+import SearchButton from './SearchButton'
 
 const Header = () => {
   return (
-    <header className="flex items-center justify-between py-6">
+    <header className="flex items-center justify-between py-10">
       <div>
         <Link href="/" aria-label={siteMetadata.headerTitle}>
           <div className="flex items-center justify-between">
@@ -16,14 +16,18 @@ const Header = () => {
               <Image
                 alt="colkito"
                 src="/static/images/authors/default.png"
-                className="flex rounded-full shadow-[0_0_2px_#fff,inset_0_0_2px_#fff,0_0_5px_#08f,0_0_15px_#08f,0_0_30px_#08f]"
-                width={30}
-                height={30}
+                className="flex rounded-full"
+                width={36}
+                height={36}
               />
             </div>
-            <div className="text-neon flex h-6 items-center text-2xl font-semibold">
-              {siteMetadata.headerTitle}
-            </div>
+            {/* {typeof siteMetadata.headerTitle === 'string' ? (
+              <div className="hidden h-6 text-2xl font-semibold sm:block">
+                {siteMetadata.headerTitle}
+              </div>
+            ) : (
+              siteMetadata.headerTitle
+            )} */}
           </div>
         </Link>
       </div>
@@ -34,14 +38,15 @@ const Header = () => {
             <Link
               key={link.title}
               href={link.href}
-              className="hidden font-medium text-slate-900 dark:text-white sm:block"
+              className="hidden font-medium text-slate-900 hover:text-primary-500 dark:text-slate-100 dark:hover:text-primary-400
+              sm:block"
             >
               {link.title}
             </Link>
           ))}
         <SearchButton />
         <ThemeSwitch />
-        {/* <MobileNav /> */}
+        <MobileNav />
       </div>
     </header>
   )
