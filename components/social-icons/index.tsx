@@ -2,11 +2,30 @@ import { FaGithubAlt, FaLinkedinIn } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 import { SiMaildotru } from 'react-icons/si'
 
+import {
+  // Mail,
+  // Github,
+  Facebook,
+  Youtube,
+  // Linkedin,
+  // Twitter,
+  // X,
+  Mastodon,
+  Threads,
+  Instagram,
+} from './icons'
+
 const components = {
-  github: FaGithubAlt,
-  linkedin: FaLinkedinIn,
   mail: SiMaildotru,
+  github: FaGithubAlt,
+  facebook: Facebook,
+  youtube: Youtube,
+  linkedin: FaLinkedinIn,
   twitter: FaXTwitter,
+  x: FaXTwitter,
+  mastodon: Mastodon,
+  threads: Threads,
+  instagram: Instagram,
 }
 
 type SocialIconProps = {
@@ -17,7 +36,10 @@ type SocialIconProps = {
 }
 
 const SocialIcon = ({ kind, href, title, size = 8 }: SocialIconProps) => {
-  if (!href || (kind === 'mail' && !/^mailto:\w+([.-]?\w+)@\w+([.-]?\w+)(.\w{2,3})+$/.test(href)))
+  if (
+    !href ||
+    (kind === 'mail' && !/^mailto:[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(href))
+  )
     return null
 
   const SocialSvg = components[kind]
