@@ -12,7 +12,7 @@ export default function NowPage() {
 
         <h2>Finishing a Sabbatical Year</h2>
         <p>
-          After leaving my last company job a few months ago, I decided to take a sabbatical to
+          After leaving my last company job, I decided to take a sabbatical to
           focus on my family and health. I've been traveling across various provinces of Argentina
           and visiting friends in Uruguay. It's been incredibly refreshing, and I now feel
           re-energized and ready to dive into long-term projects. Currently, I'm in Brazil, enjoying
